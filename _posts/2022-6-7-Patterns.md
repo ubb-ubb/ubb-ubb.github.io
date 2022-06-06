@@ -47,3 +47,4 @@ In other systems, masters do the same work as other replica but an additional ta
 File Sharing Systems such as torrents etc. There is no centralization. Everyone is seeder, everyone is leecher. Load is distributed to all peers.  
 Not safe.  
 
+... TBC
