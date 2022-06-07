@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Software Patterns
+published: true
 ---
 
 ___Read Software Architecture Patternt by Mark Richards___  

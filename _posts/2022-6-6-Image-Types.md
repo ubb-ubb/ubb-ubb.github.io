@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Image File Extension
+published: true
 ---
 
 Image File Selection  
