@@ -4,7 +4,7 @@ title: Dependency
 published: true
 ---
 
-## Dependency
+
 Dependency is more specific directly relationship among two object, where one of the object modification may require others may need to be modificated.
 
 Coupling is name for a general relationship among object.
