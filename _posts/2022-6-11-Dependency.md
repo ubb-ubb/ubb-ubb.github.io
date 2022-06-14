@@ -89,3 +89,11 @@ Association has two types.
 A tree is a composition of its root, trunk and leaves.
 
 
+## Consequences of Dependency
+
+Dependency => Complexity
+
+Dependency causes understanding and changing both parts together.
+Dependency unavoidable! Important thing is creating health dependencies, maintaining and managing them easily.
+
+
