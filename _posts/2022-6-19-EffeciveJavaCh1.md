@@ -4,7 +4,7 @@ title: Effective Java Chapter-1 Creating and Destroying objects
 published: true
 ---
 
-## 1.STATIC FACTORY METHOD INSTEAD CONSTRUCTORS
+## 1. Static Factory Method instead constructors.
 Good old traditional way to create object is using constructor. Another technique to create object is called ___static factory method___.
 Static factory method is different than design pattern factory method.
 Class can provide a public static factory method, simply static method that returns an instance of class.
@@ -30,7 +30,9 @@ Disadvantages:
 - Providing only static factory method to create new object without public-protected constructors can not be subclassed.
 - Hard to find by programmers.
 
-## 2. CONSIDER BUILDER WHEN FACED WITH MANY CONSTRUCTOR PARAMETERS
+___
+
+## 2. Consider Builder when faced with many constructor parameters.
 
 Static factory and constructors has drawbacks when class has large number of parameters.
 For example, Nutrition Facts labels must have =>serving size, serving per container,optional=> calories, total fat, trans fat, cholesterol etc..
@@ -136,4 +138,71 @@ Disadvantage:
 
 Builder pattern is good choice for creating class whose constructors or static factories would have more than a handful parameters.
 
+___
+
+## 3. Enforce Singleton Property with a private constructor or an enum type.
+
+Singleton is simply class that instantiated only once. Singleton class represent either stateless object such as function or system component. 
+Singletton makes testing difficult since mock implementation is not available. 
+
+There is two ways to implement Singleton. Both, makes constructor private and provides public static member to provide access to single instance.
+
+In one approach member is final.
+```
+public class Logging {
+
+public static final Customer instance = new Logging();
+private Logging(){}
+}
+```
+
+Private constructor makes Logging class will be instantiated once. 
+
+Second approach is public member is a static factory method.
+```
+public class Logging {
+
+public static final Customer instance = new Logging();
+private Logging(){}
+public static Logging getInstance() {return instance;}
+}
+```
+
+Third approach is implementing single-element enum.
+```
+public enum Elvis {
+INSTANCE;
+
+public void leaveTheBuilding() {}
+}
+```
+
+## Enforce noninstantiability with a private constructor
+
+Some classes is just a grouping of static methods and static fields. Such as java.lang.Math or java.util.Arrays.
+These classes have valid uses but they are not meant to be instantiated. 
+Attempting to making class abstract does not helpful to be non-instantiablity since these classes can be subclassed.
+
+Method can made non-instantiable by including private constructor. 
+
+```
+public class UtilityClass {
+
+    private UtilityClass() { 
+        throw new AssertionError();
+    }    
+    public static .....
+}
+```
+
+AssertionError is not strictly required but helpful if constructor is used within same class.
+
+Java.lang.Math Class example
+```
+    /**
+     * Don't let anyone instantiate this class.
+     */
+    private Math() {}
+    ...
+```
 
