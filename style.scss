@@ -45,22 +45,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 20px;
+  font-size: 16px;
   a {
     color: inherit;
   }
 }
 
 h2 {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 h3 {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 h4 {
-  font-size: 14px;
+  font-size: 12px;
   color: $gray;
 }
 
@@ -257,8 +257,11 @@ nav {
     border-left: 2px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
-    font-size: 14px;
+    font-size: 10px;
     font-style: italic;
+    background-color: #161d2a;
+    color: #e2fdf8;
+
   }
 
   .comments {
