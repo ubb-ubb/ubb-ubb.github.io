@@ -285,6 +285,12 @@ footer {
   padding: 20px 0;
   text-align: center;
 }
+.highlight {
+
+  background-color: #222222;
+  color: #d1d1ea;
+  font-size: 10px;
+}
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
