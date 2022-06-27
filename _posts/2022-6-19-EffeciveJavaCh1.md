@@ -177,7 +177,7 @@ public void leaveTheBuilding() {}
 }
 ```
 
-## Enforce noninstantiability with a private constructor
+## 4. Enforce noninstantiability with a private constructor
 
 Some classes is just a grouping of static methods and static fields. Such as java.lang.Math or java.util.Arrays.
 These classes have valid uses but they are not meant to be instantiated. 
@@ -206,3 +206,21 @@ Java.lang.Math Class example
     ...
 ```
 
+## 5. Prefer dependency injection over hardwiring resources
+
+Do not use singleton or static utility class to implement class that depends on one or more underlying resources whose behaviour affects that of the class. Pass the resources or factories into the constructor.
+
+## 6. Avoid creating unnecessary objects.
+
+```
+String s = new String("Name, Surname");
+```
+
+Don't do this. If on loop or frequently involved, millions of instances will occur.
+
+```
+String s = "Name, Surname";
+```
+This version using single instance.
+
+We can avoid creating unnecessary objects using static factory method.
