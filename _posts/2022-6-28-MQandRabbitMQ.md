@@ -53,7 +53,43 @@ Open source message broker. Most popular implementation of AMQP.
 
 !["Design schema"](https://i.ibb.co/4WNZ9PJ/rabbitmq.png)
 
-# Queues, Topics, Exchanges
+# Exchanges, Queues, Topics, Bindings
 
-# MQ Comparison
+!["4 Actors"](https://i.ibb.co/n7h09Bg/actors.png)
 
+## Exchanges
+
+- Messages sent first to Exchange.
+- Takes a message and routes it to **one or more** Queue.
+- Routing algorithm decides where to send messages from exchange
+- Routing algorithms depends on the exchange type and rules called bindings. 
+
+4 Exchange Types:
+- Direct Exchange: Empty string or amq.direct direction for any exchange. Default exchange when you say no binding. amq.direct 
+- Fanout Exchange: Fanout used as message distribution for everywhere. All the bindings message has. amq.fanout 
+- Topic Exchange: Choosing topic to send, define a topic send your message using that topic. amq.topic
+- Headers Exchange: Way to exchange with headers. amq.match  
+
+## Queues
+
+- Core element.
+- Messages are routed from exchange to queues with bindings.
+- Queues are final destination before received from Subscriber.
+- Routing algorithms depends on exchange type and rules called bindings.
+- Bindings bind exchanges to queues for message delivery.
+- Name: Name of queue
+- Durable: Persist queue to disk or not?
+- Exclusive: Delete queue if not used anymore.
+- Auto-delete: Delete queue if consumer unsubscribes.
+
+## Topics
+
+- Subject part of the message.
+- Defined as routing_key for message grouping.
+- Optional parameters for message exchange
+  
+## Bindings
+
+- Rules that exchanges use to route messages to queues.
+- Routing key acts like a filter.
+- If message can not be routed to any queue, either dropped or returned to publisher.
